@@ -18,9 +18,17 @@ const timer = seconds => {
           minute = 59
         }
       }
-      else {
-        displayCountdown('0'+hour + ':' + minute)
+      else if (hour > 10){
+        displayCountdown(hour + ':' + minute)
         minute -= 1
+        if (minute < 0 && hour == 0) {
+          clearTimeout(counter)
+          displayCountdown('boom')
+        }
+        else if (minute < 0) {
+          hour -= 1
+          minute = 59
+        }
       }
 
     },1000)
