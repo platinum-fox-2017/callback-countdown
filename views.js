@@ -6,7 +6,7 @@ const displayCountdown = (minute, second) => {
   clear()
   console.log(chalk.cyan(figlet.textSync("Countdown App")))
   // Your code here...
-  console.log(`${minute}:${second}`)
+  console.log(chalk.blue(figlet.textSync(minute + ' : ' + second))) 
 };
 
 module.exports = { displayCountdown };
