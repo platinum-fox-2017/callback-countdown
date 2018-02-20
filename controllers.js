@@ -1,12 +1,11 @@
 const { displayCountdown } = require("./views");
 
 const timer = seconds => {
-    let i =0;
     let timer = setInterval(function(){
-      if(i>seconds) clearInterval(timer);
+      if(seconds<0) clearInterval(timer);
       else {
-        displayCountdown(secondsToString(i));
-        i++
+        displayCountdown(secondsToString(seconds));
+        seconds--;
       }
     }, 1000);
   };
