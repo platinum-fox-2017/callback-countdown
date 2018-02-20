@@ -6,7 +6,7 @@ const timer = seconds => {
   let hour = Math.floor(seconds/60)
   var counter = setInterval(
     function () {
-      if (minute < 10 && hour < 10) {
+      if (minute <= 9) {
         displayCountdown('0'+hour + ':' +'0'+ minute)
         minute -= 1
         if (minute < 0 && hour == 0) {
@@ -18,7 +18,7 @@ const timer = seconds => {
           minute = 59
         }
       }
-      else if (hour > 10){
+      else if (minute >= 10){
         displayCountdown(hour + ':' + minute)
         minute -= 1
         if (minute < 0 && hour == 0) {
