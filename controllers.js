@@ -1,18 +1,26 @@
 const { displayCountdown } = require("./views");
 
 const timer = seconds => {
-  // Your code here...
-  let minute = Math.floor(seconds / 60)
-  let sec = seconds % 60
+  // Your code here..
   // console.log(`${minute}:${sec}`)
   const countDown = setInterval(function(){
     // console.log(seconds)
-    displayCountdown(`${minute} : ${sec}`)
-    if(sec === 0){
+    let minute = Math.floor(seconds / 60)
+    let sec = seconds % 60
+
+    if(minute <10 ){
+      minute = '0' + minute
+    }
+    if(sec < 10){
+      sec = '0' + sec
+    }
+    let display = minute + ' : '+ sec
+    displayCountdown(display)
+    if(seconds === 0){
       clearTimeout(countDown)
     }
-    else if(sec > 0){
-      sec--
+    else{
+      seconds--
     }
     
   },1000)
