@@ -13,14 +13,14 @@ const timer = seconds => {
   }, 1000)
 
   function printSeconds(seconds) {
-    let minutes = Math.round(seconds / 60)
+    let minutes = Math.floor(seconds / 60)
     let secs = seconds % 60
     if (minutes < 10 && secs < 10) {
       return minutes = '0' + minutes + ' : ' + '0' + secs
     }else if (minutes < 10) {
-      return console.log('0' + minutes + ' : ' + secs)
+      return ('0' + minutes + ' : ' + secs)
     }else if (secs < 10) {
-      return console.log(minutes + ' : ' + '0' +secs);
+      return (minutes + ' : ' + '0' +secs);
     }
   }
 };
