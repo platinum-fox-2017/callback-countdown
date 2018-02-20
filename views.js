@@ -1,11 +1,12 @@
-const clear = require("clear");
-const figlet = require("figlet");
-const chalk = require("chalk");
+const clear = require("clear")
+const figlet = require("figlet")
+const chalk = require("chalk")
 
-const displayCountdown = seconds => {
-  clear();
-  console.log(chalk.cyan(figlet.textSync("Countdown App")));
+const displayCountdown = (minute, second) => {
+  clear()
+  console.log(chalk.cyan(figlet.textSync("Countdown App")))
   // Your code here...
+  console.log(`${minute}:${second}`)
 };
 
 module.exports = { displayCountdown };
