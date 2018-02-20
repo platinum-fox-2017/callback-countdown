@@ -17,8 +17,12 @@ const timer = (seconds) => {
         displayCountdown('GONG XI FAT CHAI!!')
       }
     } else {
-      displayCountdown('0'+ minutes + ':' + newSecond)
+      displayCountdown(minutes + ':' + newSecond)
       newSecond--
+      if(newSecond < 0) {
+        minutes--
+        newSecond = 59
+      }
     }
 
   },1000
