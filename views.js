@@ -18,13 +18,7 @@ const displayCountdown = seconds => {
     detik = '0' + detik;
   }
 
-  console.log(chalk.green(figlet.textSync(`${menit}:${detik}`)));
-  
-  if (seconds <= 0) {
-    clearInterval();
-  }
-  seconds--;
-  
+  console.log(chalk.green(figlet.textSync(`${menit}:${detik}`)));  
   
 };
 

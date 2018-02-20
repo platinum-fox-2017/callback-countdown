@@ -7,10 +7,11 @@ const timer = seconds => {
   function myTimer() {
      
     displayCountdown(seconds);
-
-    
+    seconds--;   
+      
   }
-
+    
+  clearInterval(myTimer);
 
   
 };
